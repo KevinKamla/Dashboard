@@ -1,0 +1,707 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ------------- ROOT VARIABLE ------------ */
+:root{
+    --color-primary: #4858e0;
+    --color-danger: #05cc37;
+    --color-red: #ff0000;
+    --color-warning: rgb(255, 162, 0);
+    --color-success: #41f1b6;
+    --color-white: #fff;
+    --color-black: #111;
+    --color-info-dark: #6f7377;
+    --color-info-light: #dce1eb;  
+    --color-dark: #363949;
+    --color-light: rgba(206, 208, 219, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #eff2f7;
+    --color-noir: #b5b5b9;
+
+    
+    --card-border-raduis: 2rem;
+    --border-raduis-1: 0.4rem;
+    --border-raduis-2 : 0.8rem;
+    --border-raduis-3 : 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem; 
+
+    --box-shadow: 1rem 1rem 2rem var(--color-noir);
+   
+
+}
+
+/* ============================= MODE SOMBRE ========================== */
+
+.dark-theme-variables {
+    --color-background: #242323;
+    --color-white: #000000;
+    --color-dark: #edeffd;
+    --color-dark-variant: #c8d9e4;
+    --box-shadow: 0.5rem 1rem 2rem #161616;
+    --color-black: #fff;
+    --color-info-dark: #9c9ea1;
+    --color-warning: #05cc37;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden ;
+    color: var(--color-dark);
+}
+
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 23rem ;
+}
+
+a {
+    color : var(--color-dark);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 0.87rem;
+}
+
+h4 {
+    font-size: 0.8rem;
+}
+
+h5 {
+    font-size: 0.77rem;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.titi{
+    color: var(--color-info-dark);
+}
+
+.text-muted{
+    color: var(--color-primary);
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+
+aside{
+    height: 100vh;
+}
+
+aside .top {
+    background:none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .logo {
+    display: flex;
+    gap: 0.5rem;
+}
+
+aside .logo img {
+    width: 3rem;
+    height: 2.1rem;
+}
+
+aside .close, .d-n{
+    display: none !important;
+}
+
+
+
+/* ======================== SAIDEBAR ========================= */
+
+aside .sidebar {
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 2rem;
+    left: 0rem;
+}
+
+aside h3 {
+    font-weight: 500;
+} 
+ 
+aside .sidebar a {
+    display: flex;
+    color: var(--color-info-dark);
+    margin-left: 1rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 200ms ease ;
+}
+
+aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+}
+
+aside .sidebar a.active:hover{
+    border-left: var(--color-primary) solid 7px;
+}
+
+aside .sidebar a.active:focus{
+    background: var(--color-background);
+    border-left: var(--color-primary) solid 7px;
+    margin-left: 1rem;
+}
+aside .sidebar a:focus span {
+    margin-left: 1rem;
+}
+
+aside .sidebar a:hover{
+    background: var(--color-background);
+    color: var(--color-primary);  
+      
+}
+
+aside .sidebar a:hover span {
+    margin-left: 1rem;
+}
+
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}
+
+aside .sidebar .message-count {
+    background: var(--color-danger);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-size: 11px;
+    border-radius: var(--border-raduis-1);
+}
+
+
+/* ================================== MAIN ========================================  */
+
+
+main{
+    margin-top: 1.5rem;
+}
+
+main .date{
+    display: inline-block;
+    background: var(--color-noir);
+    border-radius: var(--border-raduis-1);
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+
+}
+
+main .date input[type="date"]{
+    background: transparent;
+    color: var(--color-dark);
+}
+
+main span .fala{
+    position: absolute;
+    top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+}
+
+main .insi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+main .insi > div {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-raduis);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+main .insi > div:hover{
+    box-shadow: none;
+}
+
+
+
+main .insi > div span{
+    background: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color:  var(--color-white);
+    font-size: 2rem;
+}
+
+
+main .insi > div.donnees span{
+    background: var(--color-danger);
+}
+
+main .insi > div.info span{
+    background: red;
+}
+
+
+ 
+main .insi > div .milieu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .insi h3{
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+
+main .insi .progres {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+
+main .insi svg {
+    width: 7rem;
+    height: 7rem;
+}
+
+
+main .insi svg circle{
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 10px;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+
+}
+
+
+main .insi .prix svg circle{
+    stroke-dasharray: 200 ;
+    stroke-dashoffset: -40;
+}
+
+main .insi .donnees svg circle{
+    stroke-dasharray: 90 ;
+    stroke-dashoffset: 71;
+}
+
+
+main .insi .info svg circle{
+    stroke-dasharray: 50 ;
+    stroke-dashoffset: 70;
+}
+
+
+main .insi .progres .numero{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main .insi small{
+    margin-top: 1.6rem;
+    display: block;
+}
+
+
+
+/*========================== Informations récents dans le tableau ==============================*/
+
+main .recent-oders {
+    margin-top: 2rem;
+}
+
+main .recent-oders h2 {
+    margin-bottom: 0.8rem;
+}
+
+main .recent-oders table {
+   background: var(--color-white);
+   width: 100%;
+   border-radius: var(--card-border-raduis);
+   padding: var(--card-padding);
+   text-align: center;
+   box-shadow: var(--box-shadow);
+   transition: all 300ms ease;
+}
+
+main .recent-oders table:hover {
+    box-shadow: none;
+}
+
+main table tbody td {
+    height: 2.8rem;
+    border-bottom: 2px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child {
+    border: none;
+}
+
+main .recent-oders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+/*========================== table employe ==============================*/
+
+main .table-employe h2 {
+    margin-bottom: 0.8rem;
+}
+
+.table-employe table:hover {
+    box-shadow: none;
+}
+
+.table-employe table tbody td {
+    height: 1.8rem;
+    border-bottom: 2px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+.table-employe table tbody tr:last-child {
+    border: none;
+}
+
+.table-employe tbody td {
+    height: 2.8rem;
+    border-bottom: 2px solid var(--color-light);
+    color: var(--color-black);
+}
+
+.table-employe a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+.table-employe{
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-raduis);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+ }
+
+.table-employe{
+    margin-top: 5rem;
+}
+
+
+/*========================== Coté gauche ==============================*/
+
+.gauche{
+    margin-top: 1.4rem;
+}
+
+.gauche .top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    background-color: none;
+}
+
+.gauche .top button{
+    display: none;
+}
+
+.gauche .theme-toggler{
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    /*width: 4.6rem; */
+    cursor: pointer;
+    border-radius: var(--border-raduis-1);
+}
+
+
+.gauche .theme-toggler span{
+    font-size: 1.2rem;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.gauche .theme-toggler span.active{
+    display: flex !important;
+    color: rgb(255, 255, 255);
+    border-radius: var(--border-raduis-1);
+    background: #05cc37;
+}
+.gauche .theme-toggler span img{
+    height: 30px;
+    width: 50px;
+}
+
+.gauche .top .profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+/*================================= MAJ recent ================================= */
+
+
+.gauche .MAJ-recent{
+    margin-top: 1rem;
+}
+
+.gauche .MAJ-recent h2 {
+
+    margin-top: 0.8rem;
+}
+
+.gauche .MAJ-recent .updates {
+    background: var(--color-white);
+    border-radius: var(--card-border-raduis);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.gauche .MAJ-recent .updates :hover{
+    box-shadow: none;
+}
+
+.gauche .MAJ-recent .updates .updates{
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 94%;
+        grid-template-columns: 7rem auto 180rem ;
+    }
+
+    aside .logo h2{
+        display: none;
+    }
+
+    aside .sidebar h3 {
+        display: none;
+    }
+
+    aside .sidebar a {
+        width:6.3rem ;
+    }
+
+    aside .sidebar a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+    .top{
+        display: flex;
+        width: 30%;
+        position: relative;
+        transform: translateX(-65%);
+    }
+
+    .MAJ-recent{
+        display: flex;
+        width: 30%;
+        position: relative;
+        left: -190px; ;
+        transform: translateX(-65%);
+         
+
+        
+    }
+
+    main .insi {
+        grid-template-columns: 45rem;
+        gap: 0;
+        
+    }
+
+    main .recent-oders{
+        width: 94%;
+        position: relative;
+        left: 33%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 8.8rem;
+    }
+
+    main .recent-oders table{
+        width: 85vw;
+    }
+
+    main table thead tr th:last-child,
+    main table thead tr th:first-child{
+        display: none;
+    }
+
+    main table tbody tr td:last-child,
+    main table tbody tr td:first-child{
+        display: none;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
